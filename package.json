@@ -1,0 +1,12 @@
+{
+  "name": "cordova-starter",
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-mkdir": "~0.1.1",
+    "grunt-cordovacli": "~0.3.3",
+    "grunt-image-resize": "~0.3.0"
+  }
+}
