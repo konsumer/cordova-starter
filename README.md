@@ -10,10 +10,10 @@ It seems like there is a lot of scaffolding & busy-work involved with making a c
 
 *  Fork this repo and clone that
 *  Install npm/node
-*  Install cordova command-line tools
 *  Install prerequisites for your target platforms (Xcode, android-sdk, etc.)
 *  Run `npm install` in project root.
 *  Change name/app ID (see below)
+*  Edit www/config.xml, make sure everything is good.
 *  Run `grunt init` in project root to initialize your cordova development environment
 
 For image-generation, you will need imagemagick. Install it, like so:
