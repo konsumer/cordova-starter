@@ -16,6 +16,8 @@ It seems like there is a lot of scaffolding & busy-work involved with making a c
 *  Edit www/config.xml, make sure everything is good.
 *  Run `grunt init` in project root to initialize your cordova development environment
 
+### Image Generation
+
 For image-generation, you will need imagemagick. Install it, like so:
 
 Ubuntu:
@@ -31,7 +33,7 @@ $ brew install imagemagick
 ```
 
 
-## Change name
+### Change name
 
 Everything is named "cordova-starter". To change it to YOURPROJECT, do this:
 
