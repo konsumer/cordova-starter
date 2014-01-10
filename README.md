@@ -33,7 +33,7 @@ $ brew install imagemagick
 
 ### Template System
 
-Since info in package.json is used in XML directly, make sure to not use any XML entites.
+Since info in package.json is used in XML directly, make sure to not use any XML entites. Also, don't use any of the other formats for author, etc, as it's a bit fussy.
 
 
 ## Building
