@@ -4,7 +4,7 @@ A command-line & node focused starter project.
 
 ## Motivation
 
-It seems like there is a lot of scaffolding & busy-work involved with making a cordova app.  I want to generate all my splash/icon images from just a few  images, generate my platforms from a single webroot codebase, and ignore generated code in git.
+It seems like there is a lot of scaffolding & busy-work involved with making a cordova app.  I want to generate all my splash/icon images from just a few images, generate my platforms from a single webroot codebase, and ignore generated code in git.
 
 ## Installation
 
@@ -12,8 +12,7 @@ It seems like there is a lot of scaffolding & busy-work involved with making a c
 *  Install npm/node
 *  Install prerequisites for your target platforms (Xcode, android-sdk, etc.)
 *  Run `npm install` in project root.
-*  Change name/app ID (see below)
-*  Edit www/config.xml, make sure everything is good.
+*  Edit all your app's meta-data in package.json (project-name, email, git repo, etc)
 *  Run `grunt init` in project root to initialize your cordova development environment
 
 ### Image Generation
@@ -30,37 +29,6 @@ Mac OS X (using Homebrew):
 
 ```
 $ brew install imagemagick
-```
-
-
-### Change name
-
-Everything is named "cordova-starter". To change it to YOURPROJECT, do this:
-
-Linux:
-
-```
-for i in `find . -type f`;do sed -i s/cordova-starter/YOURPROJECT/g $i;done
-```
-
-Mac:
-
-```
-for i in `find . -type f`;do sed -i '' s/cordova-starter/YOURPROJECT/g $i;done
-```
-
-You might also want to set the app ID (after above command):
-
-Linux:
-
-```
-for i in `find . -type f`;do sed -i s/io.cordova.YOURPROJECT/com.YOURCOMPANY.YOURPROJECT/g $i;done
-```
-
-Mac:
-
-```
-for i in `find . -type f`;do sed -i '' s/io.cordova.YOURPROJECT/com.YOURCOMPANY.YOURPROJECT/g $i;done
 ```
 
 ## Building

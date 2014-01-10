@@ -5,3 +5,5 @@ platforms/
 plugins/
 merges/
 platform-merges/
+www/config.xml
+.cordova/config.json

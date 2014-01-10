@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="<%= app.package_name %>" version="<%= app.version %>" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name><%= app.name %></name>
+    <description>
+        <%= app.description %>
+    </description>
+    <author email="<%= app.author_email %>" href="<%= app.author_url %>">
+        <%= app.author_name %>
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>

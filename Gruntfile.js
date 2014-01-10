@@ -3,19 +3,28 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
+        // this allows you to override how package.json is used with templates
         app: {
-            name: '<%= pkg.name %>'
+            name: '<%= pkg.name %>',
+            package_name: '<%= pkg.config.id %>',
+            description: '<%= pkg.description %>',
+            version: '<%= pkg.version %>',
+            author_name: '<%= pkg.author.name %>',
+            author_email: '<%= pkg.author.email %>',
+            author_url: '<%= pkg.author.url %>',
         },
 
         clean: {
             plugins: ['plugins'],
-            platforms: ['platforms']
+            platforms: ['platforms'],
+            merges: ['merges', 'platform-merges'],
+            template: ['.cordova/config.json', 'www/config.xml']
         },
 
         mkdir: {
             'default': {
                 options: {
-                    create: ['plugins', 'platforms']
+                    create: ['plugins', 'platforms', 'merges', 'platform-merges', '.cordova']
                 }
             }
         },
@@ -294,8 +303,17 @@ module.exports = function(grunt) {
                 files: ['www/**/*.*', 'platform-merges/**/*.*'],
                 tasks: ['update']
             }
+        },
+
+        template_process: {
+            json:{
+                files:[{src:'templates/config.json', dest:'.cordova/config.json'}]
+            },
+            xml: {
+                files:[{src:'templates/config.xml', dest:'www/config.xml'}]
+            }
         }
-    });
+    });    
 
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
@@ -303,9 +321,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-mkdir');
     grunt.loadNpmTasks('grunt-cordovacli');
     grunt.loadNpmTasks('grunt-image-resize');
+    grunt.loadTasks('tasks');
 
     grunt.registerTask('default', 'Watch for changes, run update.', ['update', 'watch']);
-    grunt.registerTask('init', 'Initialize the development environment.',['clean','mkdir','cordovacli:add_platforms','cordovacli:add_plugins','update']);
+    grunt.registerTask('init', 'Initialize the development environment.',['clean','mkdir','template_process:xml','template_process:json','cordovacli:add_platforms','cordovacli:add_plugins','update']);
     grunt.registerTask('update', 'Update platforms.', ['cordovacli:prepare_ios', 'cordovacli:prepare_android', 'copy', 'image_resize']);
     grunt.registerTask('build', 'Build Platforms.', ['cordovacli:build_ios', 'cordovacli:build_android']);
     grunt.registerTask('serve', 'Serve webroot via cordova.', ['cordovacli:serve']);
