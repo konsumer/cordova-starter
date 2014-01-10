@@ -17,14 +17,14 @@ module.exports = function(grunt) {
         clean: {
             plugins: ['plugins'],
             platforms: ['platforms'],
-            merges: ['merges', 'platform-merges'],
+            merges: ['merges'],
             template: ['.cordova/config.json', 'www/config.xml']
         },
 
         mkdir: {
             'default': {
                 options: {
-                    create: ['plugins', 'platforms', 'merges', 'platform-merges', '.cordova']
+                    create: ['plugins', 'platforms', 'merges', '.cordova']
                 }
             }
         },
