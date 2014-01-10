@@ -12,7 +12,7 @@ It seems like there is a lot of scaffolding & busy-work involved with making a c
 *  Install npm/node
 *  Install prerequisites for your target platforms (Xcode, android-sdk, etc.)
 *  Run `npm install` in project root.
-*  Edit all your app's meta-data in package.json (project-name, email, git repo, etc)
+*  Edit all your app's meta-data in package.json (project-name, email, git repo, etc.) Use the same format, as the template-parsing is a bit fussy.
 *  Run `grunt init` in project root to initialize your cordova development environment
 
 ### Image Generation
