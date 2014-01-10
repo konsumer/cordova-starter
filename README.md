@@ -1,6 +1,6 @@
 # Cordova Starter
 
-A command-line & node focused starter project.
+A command-line, node-focused starter-project.
 
 ## Motivation
 
@@ -30,6 +30,11 @@ Mac OS X (using Homebrew):
 ```
 $ brew install imagemagick
 ```
+
+### Template System
+
+Since info in package.json is used in XML directly, make sure to not use any XML entites.
+
 
 ## Building
 
